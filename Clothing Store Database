@@ -1,0 +1,31 @@
+CREATE TABLE store (
+id INTEGER PRIMARY KEY, 
+item TEXT, 
+quantity INTEGER,
+material TEXT,
+price INTEGER);
+
+INSERT INTO store VALUES(1, "shirt", 5, "Cotton", 20);
+INSERT INTO store VALUES(2, "pants", 5, "Denim", 30);
+INSERT INTO store VALUES(3, "tank", 5, "Leather", 45);
+INSERT INTO store VALUES(4, "shorts", 10, "Suede", 20);
+INSERT INTO store VALUES(5, "dress", 10, "Pleather", 20);
+INSERT INTO store VALUES(6, "leggings", 4, "Cotton", 5);
+INSERT INTO store VALUES(7, "shoes", 5, "Leather", 50);
+INSERT INTO store VALUES(8, "necklace", 10, "silver", 100);
+INSERT INTO store VALUES(9, "bracelet", 2, "gold", 45);
+INSERT INTO store VALUES(10, "socks", 10, "cotton", 10);
+INSERT INTO store VALUES(11, "gloves", 2, "Polyester", 15);
+INSERT INTO store VALUES(12, "tights", 1, "Fishnet", 10);
+INSERT INTO store VALUES(13, "earrings", 4, "silver", 30);
+INSERT INTO store VALUES(14, "bag", 20, "Leather", 100);
+INSERT INTO store VALUES(15, "pajamas", 15, "Flannel", 20);
+
+--Display database ordered by price (highest to lowest)
+SELECT * FROM store ORDER BY price desc;
+
+--What items are low stock (less than 5 items)?
+SELECT item "Low Stock" FROM store WHERE quantity < 5;
+
+--What is the average price of items made out of leather?
+SELECT avg(price) "Average price of leather items" FROM store WHERE material = "Leather";
